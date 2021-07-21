@@ -58,8 +58,10 @@ for Pos in range(Report_number):
 	time_series[Underlying[0]]['VOLK'] = time_series[Underlying[0]]['TR'].ewm(span=n, adjust=False).mean()
 	time_series[Underlying[0]].drop(['TR'], axis =1, inplace=True)
 	
-	#Import the reporting DataFrame format
+	#Import the reporting DataFrame format and fill It
 	reportingDF[Underlying[0]] = pd.read_excel(File_name, sheet_name = 'Reporting', skiprows=5, usecols='F:K')
+	#Semaine 
+	
 	#Diff Hebdo
 	#VAR 01/01/2021
 	
